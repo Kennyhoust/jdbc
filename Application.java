@@ -1,12 +1,22 @@
 import java.sql.*;
 
-
+/*
+CREATE TABLE IF NOT EXISTS equipment (
+    equip_id int(5) NOT NULL AUTO_INCREMENT,
+    type varchar(50) DEFAULT NULL,
+    install_date DATE DEFAULT NULL,
+    color varchar(20) DEFAULT NULL,
+    working bool DEFAULT NULL,
+    location varchar(250) DEFAULT NULL,
+    PRIMARY KEY(equip_id)
+    );
+*/
 public class Application {
     public static void main(String[] args) {
        
         try {
             Class.forName("org.mariadb.jdbc.Driver");
-            ConnectionPool.getConnection("jdbc:mysql://ubuntu:3306/wpblog", "root", "q1w2e3r4");
+            ConnectionPool.getConnection("jdbc:mysql://ip:port/wpblog", "root", "111111");
 
             Command c = null;
            
