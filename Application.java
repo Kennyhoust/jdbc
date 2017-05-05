@@ -16,7 +16,7 @@ public class Application {
        
         try {
             Class.forName("org.mariadb.jdbc.Driver");
-            ConnectionPool.getConnection("jdbc:mysql://ip:port/wpblog", "root", "111111");
+            ConnectionPool.init("jdbc:mysql://ip:port/wpblog", "root", "111111");
 
             Command c = null;
            
@@ -156,7 +156,7 @@ class ConnectionPool {
 
     public static Connection getInstance() throws SQLException  {
         if (conn == null) {
-            throw new SQLException();
+            throw new SQLException("Not Init");
         } else {
             return conn;
         }
@@ -166,7 +166,7 @@ class ConnectionPool {
 
     }
 
-    public static void getConnection(String url, String user, String password)
+    public static void init(String url, String user, String password)
             throws SQLException {
         if (conn == null) {
             conn = DriverManager.getConnection(url, user, password);
