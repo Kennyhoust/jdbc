@@ -101,8 +101,6 @@ class Delete extends Command {
             String sql = "DELETE FROM equipment";// where equip_id = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             // ps.setString(1, "1");
-            ps.executeQuery();
-
             ResultSet rs = ps.executeQuery();
             return rs;
         } catch (SQLException e) {
