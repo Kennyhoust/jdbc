@@ -61,7 +61,7 @@ abstract class Command {
 
     public abstract ResultSet execute();
 
-    public void print(ResultSet rs) {
+    public static void print(ResultSet rs) {
         try {
             while (rs.next()) {
                 String s = "equip_id=" + rs.getString("equip_id") + ",type  ="
